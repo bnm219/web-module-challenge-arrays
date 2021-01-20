@@ -160,8 +160,14 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(arr, string){
+        let newArrray = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].includes(string)){
+            newArrray.push(arr[i]);
+        }
+    }
+    return newArrray;
 }
 
 
@@ -195,8 +201,14 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
+function getRandomFlavors(arr, string){
+//     let newArrray = [];
+//     for(let i = 0; i < arr.length; i++){
+//         if(arr[i].inludes(string)){
+//             newArrray.push(arr[i]);
+//         }
+//     }
+//     return newArrray;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
