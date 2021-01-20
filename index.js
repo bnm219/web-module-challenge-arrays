@@ -42,15 +42,13 @@ With all of these changes going on, we don't want to lose track of the actual, o
 /*
 Use the copy function below to do the following:
     1. receive an array as a parameter - you will pass in originalFlavors as an argument when the function is invoked.
-    2. Return a copy of the received array  
+    2. Return a copy of the received array.  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
+function copy(arr){
+    const newArray = [...arr];
+    return newArray;
 }    
-
-
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -64,8 +62,8 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(arr){
+    return arr.length === 31 ? true : false;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +79,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(arr, flavor){
+   arr.unshift(flavor);
+   return arr;
 }
 
 
@@ -97,8 +96,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(arr){
+   arr.pop();
+   return arr;
 }
 
 
@@ -114,8 +114,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(arr, num){
+    return arr[num]
 }
 
 
@@ -134,8 +134,13 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(arr, flavor){
+   for (let i = 0; i < arr.length; i++){
+       if (arr[i] === flavor){
+           arr.splice(i,1);
+       }
+   }
+   return arr;
 }
 
 
@@ -201,14 +206,16 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(arr, string){
-//     let newArrray = [];
-//     for(let i = 0; i < arr.length; i++){
-//         if(arr[i].inludes(string)){
-//             newArrray.push(arr[i]);
-//         }
-//     }
-//     return newArrray;
+function getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors){
+    const newArray = []
+    while (newArray.length < 31){
+        newArray.push(originalFlavors[Math.floor(Math.random * 31)])
+        newArray.push(newFlavors[Math.floor(Math.random * 31)])
+        newArray.push(seasonalFlavors[Math.floor(Math.random * 31)])
+        newArray.push(regionalFlavors[Math.floor(Math.random * 31)])
+    }
+    console.log(newArray)
+    return newArray;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
